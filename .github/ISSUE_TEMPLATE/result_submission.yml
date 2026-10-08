@@ -1,0 +1,36 @@
+name: Result submission
+description: Announce a study submitted via pull request (submissions/<study_id>/).
+title: "[Result] <study_id>"
+labels: ["submission", "audit-pending"]
+body:
+  - type: input
+    id: study_id
+    attributes: {label: study_id}
+    validations: {required: true}
+  - type: input
+    id: pr
+    attributes: {label: Pull request link}
+    validations: {required: true}
+  - type: dropdown
+    id: label
+    attributes: {label: Label claimed, options: [EXPLORATORY, PRE_REGISTERED, VALIDATED_OOS, REPLICATED, REJECTED]}
+    validations: {required: true}
+  - type: input
+    id: ntrials
+    attributes: {label: Total trials N}
+    validations: {required: true}
+  - type: textarea
+    id: summary
+    attributes: {label: "One-paragraph summary, including the main limitation"}
+    validations: {required: true}
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: "python tools/prepublish_check.py submissions/<study_id> passes"
+          required: true
+        - label: No raw tick/OHLC data included
+          required: true
+        - label: trials.csv includes failed configurations
+          required: true

@@ -1,0 +1,54 @@
+{
+  "study_id": "example-synthetic",
+  "author": "maintainer",
+  "label": "EXPLORATORY",
+  "horizon": "swing",
+  "replicates": null,
+  "data_inputs": [
+    {
+      "source_id": "histdata_eurusd_tick",
+      "file_name": "HISTDATA_COM_ASCII_EURUSD_T202403.zip",
+      "sha256": "b70fcaf5ee82ca6dc847f8a6c0f4354ecb456ae8579faed8563b53ac2ac324df"
+    }
+  ],
+  "periods": {
+    "exploration": [
+      "2024-03-01",
+      "2024-03-31"
+    ]
+  },
+  "cost_model": {
+    "bid_ask": true,
+    "commission_usd_per_100k_rt": 7,
+    "slippage_pips_per_side": [
+      0.0,
+      0.2
+    ],
+    "swap": "broker swap table, 2024 (placeholder)"
+  },
+  "n_trials": 2,
+  "files": [
+    {
+      "path": "metrics.json",
+      "sha256": "5c695b0b677480784dd3465541b1df7f1f15d8d45f2fb83d7324969338af0114"
+    },
+    {
+      "path": "preregistration.md",
+      "sha256": "f6dab02780339f2871435b0c80649b4c010cdfaa131917fbab6c7d2cdda73771"
+    },
+    {
+      "path": "README.md",
+      "sha256": "2247c7c23a7721d04852ec0e590db6247868b05fee06bdcd02d6cac43b54282f"
+    },
+    {
+      "path": "trades.csv",
+      "sha256": "0b7e1ac7e568ee68e3f02deb32c32d516b68272f331e41edc6fd440416f79db5"
+    },
+    {
+      "path": "trials.csv",
+      "sha256": "b13b038d5108fb758740007b09fbc9585644b69f4a047f0a67dbab7ebeb1ef82"
+    }
+  ],
+  "environment": "Python 3.12 (placeholder)",
+  "reproduce_command": "python run.py --config config.json"
+}

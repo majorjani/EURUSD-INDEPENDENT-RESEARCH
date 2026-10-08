@@ -1,0 +1,32 @@
+# Market data must never be committed (docs/DATA_LICENSE_POLICY.md)
+*.zip
+*.7z
+*.gz
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.hst
+*.fxt
+*.bi5
+HISTDATA_COM_*
+DAT_ASCII_*
+DAT_MT_*
+DAT_NT_*
+data/**/*.csv
+data/**/*.txt
+data/raw/
+data/local/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / browser tooling (not part of this repo)
+node_modules/
+
+# Local secrets / notes
+.env
+*.local.*

@@ -1,0 +1,16 @@
+name: Methodology critique
+description: Point out a flaw or improvement in the protocol, audit or a submission.
+title: "[Method] <short title>"
+labels: ["methodology"]
+body:
+  - type: input
+    id: target
+    attributes: {label: "What does this concern?", placeholder: "docs/RESEARCH_PROTOCOL.md §4, or study_id"}
+    validations: {required: true}
+  - type: textarea
+    id: issue
+    attributes: {label: Problem}
+    validations: {required: true}
+  - type: textarea
+    id: fix
+    attributes: {label: Proposed fix and references}

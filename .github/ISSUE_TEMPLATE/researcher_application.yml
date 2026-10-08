@@ -1,0 +1,53 @@
+name: Researcher application
+description: Join as an independent researcher, replicator, reviewer or auditor.
+title: "[Application] <handle>"
+labels: ["application"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please do not post private contact details. Unpaid, non-commercial research only. Read docs/RESEARCH_PROTOCOL.md and docs/DATA_LICENSE_POLICY.md first."
+  - type: input
+    id: handle
+    attributes: {label: Handle / credited name}
+    validations: {required: true}
+  - type: textarea
+    id: background
+    attributes: {label: Background, description: "Quant, academic, software, discretionary..."}
+    validations: {required: true}
+  - type: input
+    id: platforms
+    attributes: {label: Platforms / languages, placeholder: "Python 3.12, MQL5, LEAN..."}
+  - type: checkboxes
+    id: role
+    attributes:
+      label: Contribution type
+      options:
+        - label: Independent study of a new hypothesis
+        - label: Independent replication of an existing submission
+        - label: Methodology review / critique
+        - label: Auditor
+  - type: dropdown
+    id: horizon
+    attributes: {label: Horizon, options: [swing, intraday, scalping, n/a]}
+  - type: textarea
+    id: hypothesis
+    attributes: {label: Proposed hypothesis (optional)}
+  - type: textarea
+    id: data
+    attributes: {label: Data you can legitimately access, description: "Provider, period, licence terms"}
+    validations: {required: true}
+  - type: textarea
+    id: coi
+    attributes: {label: Conflicts of interest, description: "Do you sell signals, courses or EAs, or manage money?"}
+    validations: {required: true}
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: I will not upload raw market data to this repository.
+          required: true
+        - label: I will log every trial and pre-register before touching validation/holdout data.
+          required: true
+        - label: I understand there are no profitability claims and no payment.
+          required: true

@@ -1,0 +1,3 @@
+trial_id,timestamp,hypothesis_id,params_json,period,n_trades,metric
+1,2026-10-08T12:00:00Z,example,"{""lookback"": 10}",exploration,2,-1.1
+2,2026-10-08T12:05:00Z,example,"{""lookback"": 20}",exploration,0,

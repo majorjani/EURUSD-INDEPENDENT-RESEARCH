@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EUR/USD study submission manifest",
+  "type": "object",
+  "required": ["study_id", "author", "label", "horizon", "data_inputs", "periods", "cost_model", "n_trials", "files", "environment", "reproduce_command"],
+  "properties": {
+    "study_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"},
+    "author": {"type": "string"},
+    "label": {"enum": ["EXPLORATORY", "PRE_REGISTERED", "VALIDATED_OOS", "REPLICATED", "REJECTED"]},
+    "horizon": {"enum": ["swing", "intraday", "scalping"]},
+    "replicates": {"type": ["string", "null"]},
+    "data_inputs": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["source_id", "file_name", "sha256"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "file_name": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "periods": {
+      "type": "object",
+      "properties": {
+        "exploration": {"type": "array", "items": {"type": "string", "format": "date"}, "minItems": 2, "maxItems": 2},
+        "validation": {"type": "array", "items": {"type": "string", "format": "date"}, "minItems": 2, "maxItems": 2},
+        "holdout": {"type": "array", "items": {"type": "string", "format": "date"}, "minItems": 2, "maxItems": 2}
+      }
+    },
+    "cost_model": {
+      "type": "object", "required": ["bid_ask", "commission_usd_per_100k_rt", "slippage_pips_per_side", "swap"],
+      "properties": {
+        "bid_ask": {"type": "boolean"},
+        "commission_usd_per_100k_rt": {"type": "number"},
+        "slippage_pips_per_side": {"type": "array", "items": {"type": "number"}},
+        "swap": {"type": "string"}
+      }
+    },
+    "n_trials": {"type": "integer", "minimum": 1},
+    "files": {
+      "type": "array",
+      "items": {"type": "object", "required": ["path", "sha256"],
+        "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+    },
+    "environment": {"type": "string"},
+    "reproduce_command": {"type": "string"}
+  }
+}

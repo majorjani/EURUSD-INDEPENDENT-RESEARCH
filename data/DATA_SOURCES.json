@@ -1,0 +1,27 @@
+{
+  "_policy": "See docs/DATA_LICENSE_POLICY.md. redistribution must be PERMITTED with evidence before any data file from that source may be committed.",
+  "sources": [
+    {
+      "source_id": "histdata_eurusd_tick",
+      "provider": "HistData.com",
+      "url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd",
+      "format": "Generic ASCII tick, Bid/Ask, 'YYYYMMDD HHMMSSfff,bid,ask,volume'",
+      "timezone": "EST (UTC-5) without DST",
+      "redistribution": "NOT_PERMITTED",
+      "redistribution_basis": "UNVERIFIED: no licence or redistribution terms found on https://www.histdata.com/f-a-q/ (checked 2026-10-08). FAQ states 'Use the data at your own will and risk.'",
+      "evidence": null,
+      "allowed_in_repo": ["file names", "sha256 hashes", "aggregate statistics", "trade lists without price series"]
+    },
+    {
+      "source_id": "histdata_eurusd_m1",
+      "provider": "HistData.com",
+      "url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/eurusd",
+      "format": "Generic ASCII M1 OHLC",
+      "timezone": "EST (UTC-5) without DST",
+      "redistribution": "NOT_PERMITTED",
+      "redistribution_basis": "UNVERIFIED, same as histdata_eurusd_tick",
+      "evidence": null,
+      "allowed_in_repo": ["file names", "sha256 hashes", "aggregate statistics", "trade lists without price series"]
+    }
+  ]
+}

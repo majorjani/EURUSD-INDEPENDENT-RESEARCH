@@ -1,0 +1,2 @@
+study_id,author,hypothesis,horizon,timeframe,data_source,period_role,period_start,period_end,slippage_pips,commission_usd_rt,n_trials,n_trades,net_exp_pips,profit_factor,hit_rate,sharpe_daily_ann,dsr,max_dd_pips,ci95_low,ci95_high,label,audit_verdict,replicated_by,notes
+maint-h4-breakout-retest-v0,maintainer,H4 breakout followed by retest of broken level,swing,H4,histdata_eurusd_tick,exploration,2024-01-01,2025-12-31,,,UNLOGGED,,,,,,,,,,EXPLORATORY,AUDIT_FLAGGED,,"Selected post hoc; same-bar entry; no OOS. Metrics withheld until re-run under protocol."
